@@ -1,0 +1,142 @@
+body {
+  background: linear-gradient(100deg, #cbf1f5 0%, #e3fdfd 50%, #cbf1f5 100%);
+  font-family: "IBM Plex Serif", "Inter", "Roboto", "Nunito", "Crimson Text",
+    "Montserrat", "IBM Plex Sans", serif;
+}
+
+.navbar {
+  --navbar-text-color: #d4adfc;
+  --navbar-background-color: #5c469c;
+  --navbar-text-color-hover: #fff;
+  padding: 0.5% 2%;
+  background-color: var(--navbar-background-color);
+  color: var(--navbar-text-color);
+}
+
+.navbar:hover {
+  color: var(--navbar-text-color-hover);
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navbar-text-color);
+}
+
+.navbar-brand:hover {
+  color: var(--navbar-text-color-hover);
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-nav .nav-item {
+  padding: 0 1.5rem !important;
+}
+
+.nav-link {
+  color: var(--navbar-text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--navbar-text-color-hover);
+}
+
+.nav-link:active {
+  color: var(--navbar-text-color);
+}
+
+#register-form {
+  background-color: #5c469c;
+  width: 25rem;
+  height: auto;
+  text-align: center;
+  margin: 10rem auto;
+  border-radius: 30px;
+  color: #e3fdfd;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#register-form h2 {
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-size: 2rem;
+}
+
+#register-form .form-group {
+  height: 90px;
+  margin-bottom: 1.5rem;
+}
+
+#register-form label {
+  display: block;
+  text-align: left;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#register-form input[type="text"],
+#register-form input[type="email"],
+#register-form input[type="password"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+}
+
+#register-form button[type="submit"] {
+  background-color: var(--navbar-background-color);
+  color: var(--navbar-text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#register-form button[type="submit"]:hover {
+  /* background-color: #d4adfc; */
+  color: #b799ff;
+  /* background-color: var(--navbar-text-color); */
+  /* color: var(--navbar-text-color-hover); */
+}
+
+#register-form p {
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+#register-form p a {
+  color: #e3fdfd;
+  text-decoration: none;
+}
+
+#register-form p a:hover {
+  text-decoration: underline;
+}
+
+#register-form .list-group {
+  text-align: left;
+}
+
+#register-form .list-group-item {
+  background-color: transparent;
+  border: none;
+}
+
+#register-form .error-message {
+  margin: 0;
+  color: #e3fdfd;
+}

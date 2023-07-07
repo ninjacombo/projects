@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ super () }}
+{% endblock %}
+{% block content %}
+    <div class="row text_color_light">
+        <div class="col-4 container-fluid">
+            <form class="grid" action="/login" method="POST">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <br>
+            <input type="text" name="password" placeholder="Enter your password" required>
+            <input type="Submit" value="Login" class="btn btn-success">
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+        </form>
+        </div>
+        <div class="col-8 container-fluid">
+            <p>Don't have an account?</p>
+            <a href="{{ url_for('add_user') }}" class="btn btn-primary">Create an Account</a>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

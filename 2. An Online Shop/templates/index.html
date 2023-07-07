@@ -1,0 +1,200 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+        {#  TITLE  #}
+    <div class="container-fluid text_color_light">
+        <div class="row justify-content-center">
+            <div class="col-8 text-center">
+                <h1>Planet Store (with Pluto!)</h1>
+                <h4>Purchase your very own planet, supplies unlimited!</h4>
+                <p>(Planets derived from infinite dimensions. No refunds)</p>
+            </div>
+            <div class="col-4 text-end align-self-center">
+                {% if logoutbtn  %}
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="btn btn-primary">Login Screen</a>
+                {% endif %}
+            </div>
+
+
+        </div>
+        <hr>
+        <div class="row">
+            <h1>Planets for Sale:</h1>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Mercury: $10,000</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/mercury.jpeg') }}" alt="Mercury">
+                    <br>
+                    <div class="#">
+                        <p>The first planet from the sun
+                            and the smallest in the solar system, terrestrial,
+                            cratered, with an exosphere. A great place to tan (or burn).</p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="mercury" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Venus: $30,000</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/venus.jpeg') }}" alt="Venus">
+                    <br>
+                    <div class="#">
+                        <p>The second planet from the sun,
+                            rocky with the thickest atmosphere of the rocky bodies,
+                            the known as the "morning" or "evening" star. Bring your own oxygen mask
+                            if you happen to visit.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="venus" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Earth: $777,777.77</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/earth.jpeg') }}" alt="Earth">
+                    <br>
+                    <div class="#">
+                        <p>A cozy little planet, third from the sun.
+                            Many beautiful locations to visit,
+                            if you can stand the ruling population.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="earth" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Mars: $50,000</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/mars.jpeg') }}" alt="Mars">
+                    <br>
+                    <div class="#">
+                        <p>Known as "The Red Planet", it is home to the Martians. They are currently
+                            protesting the takeover of their planet by an earthling known as 'The Musk'.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="mars" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Jupiter:$500,000</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/jupiter.jpeg') }}" alt="Jupiter">
+                    <br>
+                    <div class="#">
+                        <p>The largest planet in the solar system, this gas giant's mass
+                            is more than two and a half of all the other planets combined.
+                            Contains a famous orange spot in its hydrogen rich clouds.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="jupiter" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Saturn: $500,000</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/saturn.jpeg') }}" alt="Saturn">
+                    <br>
+                    <div class="#">
+                        <p>The sixth planet from the sun, a gas giant known for its majestic rings.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="saturn" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Uranus: $69,420</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/uranus.jpeg') }}" alt="Uranus">
+                    <br>
+                    <div class="#">
+                        <p>Known for its punny name, this ice giant is composed of water, ammonia,
+                            and methane.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="uranus" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Neptune: $9,001</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/neptune.jpeg') }}" alt="Neptune">
+                    <br>
+                    <div class="#">
+                        <p>Number eight, and feeling great, being composed mostly of gases and liquids.
+                            This planet orbits the sun once every 164 years. Better get used to only have one birthday, maybe.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="neptune" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+            </div>
+            <div class="col-6 cards text_color_dark card-padding">
+                <article class="card">
+                    <header>
+                        <h2>Pluto: $9,999,999,999,999</h2>
+                    </header>
+                    <img class="center" src="{{ url_for('static', filename='/images/pluto.jpeg') }}" alt="Pluto">
+                    <br>
+                    <div class="#">
+                        <p>Voted a dwarf planet by people who definitely have not
+                            had fun or smiled in years, this is the people's favorite.
+                            </p>
+                    </div>
+                    <form action="/create-checkout-session" method="POST">
+                        <button name="name" value="pluto" type="submit" class="btn btn-info">Checkout</button>
+                    </form>
+                </article>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <br>
+
+
+{% endblock %}
+{% block footer %}
+{% endblock %}

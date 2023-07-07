@@ -1,0 +1,194 @@
+body {
+  /* background-color: #fff; */
+  font-family: "IBM Plex Serif", "Inter", "Roboto", "Nunito", "Crimson Text",
+    "Montserrat", "IBM Plex Sans", serif;
+  /* ff 3.6+ */
+  background: -moz-linear-gradient(
+    100deg,
+    #cbf1f5 0%,
+    #e3fdfd 50%,
+    #cbf1f5 100%
+  );
+
+  /* safari 5.1+,chrome 10+ */
+  background: -webkit-linear-gradient(
+    100deg,
+    #cbf1f5 0%,
+    #e3fdfd 50%,
+    #cbf1f5 100%
+  );
+
+  /* opera 11.10+ */
+  background: -o-linear-gradient(100deg, #cbf1f5 0%, #e3fdfd 50%, #cbf1f5 100%);
+
+  /* ie 6-9 */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CBF1F5', endColorstr='#CBF1F5', GradientType=0 );
+
+  /* ie 10+ */
+  background: -ms-linear-gradient(
+    100deg,
+    #cbf1f5 0%,
+    #e3fdfd 50%,
+    #cbf1f5 100%
+  );
+
+  /* global 94%+ browsers support */
+  background: linear-gradient(100deg, #cbf1f5 0%, #e3fdfd 50%, #cbf1f5 100%);
+}
+
+.navbar {
+  --navbar-text-color: #e3fdfd;
+  --navbar-background-color: #5c469c;
+  --navbar-text-color-hover: #fff;
+  padding: 0.5% 2%;
+  background-color: var(--navbar-background-color);
+  color: var(--navbar-text-color);
+  text-align: center;
+  display: block;
+  height: 70px;
+}
+
+.navbar:hover {
+  color: var(--navbar-text-color-hover);
+}
+
+.navbar a {
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.navbar a:hover {
+  color: var(--navbar-text-color-hover);
+}
+
+form {
+  --form-button-background-color: #5c469c;
+  --form-button-background-color-hover: #e3fdfd;
+  --form-button-text-color: #e3fdfd;
+  --form-button-text-color-hover: #9376e0;
+  width: 60%;
+  /* display: flex;
+  justify-content: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+/* Hide the default file input button */
+.file-input {
+  display: none;
+}
+
+/* Style the custom button */
+.custom-button {
+  padding: 10px 20px;
+  background-color: var(--form-button-background-color);
+  color: var(--form-button-text-color);
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+/* Change the background color and text color on hover */
+.custom-button:hover {
+  background-color: var(--form-button-background-color-hover);
+  color: var(--form-button-text-color-hover);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#result {
+  padding: 10px 20px;
+  background-color: #5c469c;
+  color: #e3fdfd;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#result:hover {
+  /* background-color: var(--form-button-background-color-hover);
+  color: var(--form-button-text-color-hover); */
+  background-color: #e3fdfd;
+  color: #9376e0;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+#upload-files {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+#colors-list {
+  width: 50rem;
+  height: auto;
+  text-align: center;
+  margin: 8rem auto;
+  margin-top: 5rem;
+  border-radius: 30px;
+  color: #e3fdfd;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+}
+
+#colors-list ul {
+  margin: 30px auto;
+  width: 24rem;
+}
+
+.img-palette {
+  width: 22rem;
+  height: auto;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.square {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 30px;
+  margin: 0 auto;
+  background-color: #000;
+}
+
+.list-group {
+  text-align: left;
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: text;
+  font-size: 22px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p.error-message {
+  margin-top: 1.5rem;
+  color: red;
+  font-size: 2rem;
+}
+
+p.green-message {
+  margin-top: 1.5rem;
+  color: green;
+  font-size: 2rem;
+}

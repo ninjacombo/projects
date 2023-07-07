@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block head %}
+    {{ super () }}
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <form class="grid" action="/add_user" method="POST">
+            <label>Email</label>
+            <br>
+            <input type="text" name="email" placeholder="Enter your email" required>
+            <br>
+            <label>Password</label>
+            <br>
+            <input type="text" maxlength="10" name="password" placeholder="Enter your password" required>
+            <br>
+            <label>Re-enter Password</label>
+            <br>
+            <input type="text" maxlength="10" name="re-entered-pw" placeholder="Please re-enter your password" required>
+            <br>
+            <input type="Submit" value="Create" class="btn btn-success">
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+
+
+        </form>
+
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

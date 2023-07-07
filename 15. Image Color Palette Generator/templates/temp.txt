@@ -1,0 +1,19 @@
+<form
+        action="{{ url_for('result') }}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <!-- Hidden file input -->
+        <input
+          type="file"
+          name="files"
+          accept="image/*"
+          multiple
+          class="file-input"
+        />
+
+        <!-- Custom button that triggers the file input -->
+        <label for="file-input" class="custom-button">Upload Files</label>
+
+        <input type="submit" value="Result" id="result" />
+      </form>

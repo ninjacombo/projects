@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>TODO List</title>
+
+    <!-- Main CSS styling file -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link
+      href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}"
+      rel="stylesheet"
+    />
+
+    <!-- Custom fonts for this template -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text&family=IBM+Plex+Sans&family=IBM+Plex+Serif&family=Inter&family=Montserrat&family=Nunito&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+
+    <!-- Link to JavaScript file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="{{ url_for('home') }}">TODO LIST</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+          {% if not has_logged_in %}
+          <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
+          <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+          {% else %}
+          <a class="nav-item nav-link" href="{{ url_for('new_list') }}">New List</a>
+          <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+          {% endif %}
+          <!-- <a class="nav-item nav-link disabled" href="#">Disabled</a> -->
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

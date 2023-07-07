@@ -1,0 +1,29 @@
+Sure! Let's go through the code step by step:
+
+function completeItem(itemID) {
+  // Create a new XMLHttpRequest object
+  var xhr = new XMLHttpRequest();
+This code defines a JavaScript function called completeItem that takes an itemID parameter. The purpose of this function is to send a request to the server to complete an item with the given ID. It creates a new XMLHttpRequest object, which is used for making asynchronous HTTP requests.
+  // Set up the request
+  xhr.open('POST', '/update/' + itemID, true);
+This line sets up the request by calling the open method of the XMLHttpRequest object. It specifies the HTTP method as 'POST' and the URL to send the request to as '/update/' + itemID. The itemID is appended to the URL to indicate the specific item that needs to be updated. The third parameter true specifies that the request should be asynchronous.
+  // Set the Content-Type header if necessary
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+This line sets the Content-Type header of the request. In this case, it is set to 'application/x-www-form-urlencoded', which is a common format used to send form data in HTTP requests.
+  // Set up the callback function to handle the response
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Request was successful
+      console.log(xhr.responseText);
+      // Handle the response data here
+    } else {
+      // Request failed
+      console.log('Request failed. Status:', xhr.status);
+    }
+  };
+This code sets up a callback function to handle the response when the request is complete. The onload event is triggered when the response has been received successfully. Inside the callback function, it checks if the status code of the response is 200, indicating a successful request. If so, it logs the response text to the console, and you can add your own logic to handle the response data. If the status code is not 200, it logs a failure message along with the status code.
+  // Send the request
+  xhr.send();
+}
+Finally, the code sends the request to the server by calling the send method of the XMLHttpRequest object. This initiates the HTTP request and the server will process it based on the specified URL and method.
+Overall, this code sets up an AJAX request using the XMLHttpRequest object to send a POST request to the server with the itemID parameter. It defines a callback function to handle the response when it is received. You can customize the code inside the callback function to perform specific actions based on the response from the server.

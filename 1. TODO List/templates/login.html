@@ -1,0 +1,37 @@
+{% include "header.html" %}
+
+<head>
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/login.css') }}"
+  />
+</head>
+
+<div id="register-form">
+  <h2>Login</h2>
+
+  <form action="{{ url_for('login') }}" method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required />
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary" href="{{ url_for('login') }}">Login</button>
+  </form>
+
+  <p>Don't have an account? <a href="{{ url_for('register') }}">Register</a></p>
+
+  <ul class="list-group">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <li class="list-group-item">
+      <p class="error-message">{{ message }}</p>
+    </li>
+    {% endfor %} {% endif %} {% endwith %}
+  </ul>
+</div>
